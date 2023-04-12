@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  terraform pipe:
+  terraform_pipe:
     name: 'Terraform CI/CD'
     runs-on: ubuntu-latest
 
