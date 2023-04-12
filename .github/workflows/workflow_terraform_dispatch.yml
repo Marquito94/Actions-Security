@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: 'Verify deploy with PR number manually"
+    - name: Verify deploy with PR number manually
       uses: actions/github-script@v5
       id: verify_pr_number
       with:
