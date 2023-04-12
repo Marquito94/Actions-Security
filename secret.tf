@@ -16,3 +16,9 @@ resource "google_secret_manager_secret" "secret-basic" {
     }
   }
 }
+
+resource "google_secret_manager_secret_version" "secret-version-basic" {
+  secret = google_secret_manager_secret.secret-basic.id
+
+  secret_data = "AIzaSyAUwMfKOCoQOfabBKTqlaxOJBfVZucbKaQ"
+}
