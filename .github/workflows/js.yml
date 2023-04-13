@@ -5,13 +5,13 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - 'node-test/**'
+    paths-ignore:
+      - '.github/'
   push:
     branches:
       - main
-    paths:
-      - 'node-test/**'
+    paths-ignore:
+      - '.github/'
 
 jobs:
 
