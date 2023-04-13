@@ -7,6 +7,8 @@ on:
   pull_request:
     paths-ignore:
       - '.github/**'
+    paths:
+      - '**/*.tf'
 
 jobs:
   terraform_pipe:
