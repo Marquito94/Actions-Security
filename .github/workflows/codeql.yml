@@ -8,12 +8,12 @@ name: "Code scanning"
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - '.github/**'
+    paths:
+      - '**/*.js'
   pull_request:
     branches: [ main ]
-    paths-ignore:
-      - '.github/**'
+    paths:
+      - '**/*.js'
 
 jobs:
   analyze:
