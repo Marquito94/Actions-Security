@@ -6,12 +6,12 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.github/'
+      - '.github/**'
   push:
     branches:
       - main
     paths-ignore:
-      - '.github/'
+      - '.github/**'
 
 jobs:
 
