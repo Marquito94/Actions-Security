@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "buckettest" {
-  name          = "testbucketmarco123"
+  name          = "testbucketmarco12"
   location      = "US"
   force_destroy = true
 }
