@@ -39,7 +39,7 @@ jobs:
           }
           
           // Show response.data content
-          echo response.data.head.ref
+          console.log(response.data);
   
   TerraformReusableWorkflow:
     name: Reusable Workflow Setup
