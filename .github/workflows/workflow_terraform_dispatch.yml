@@ -9,7 +9,7 @@ on:
  
 jobs:
   WorkflowDispatchPRButtonTesting:
-    name: 'Terraform Testing - PR Button test - Reusable Workflow test'
+    name: PR Button test
     defaults:
       run:
         shell: bash
