@@ -39,7 +39,7 @@ jobs:
           }
   
   TerraformReusableWorkflow:
-    name: Terraform CI/CD
+    name: Reusable Workflow Setup
     uses: Marquito94/Actions-Security/.github/workflows/reusable-terra.yml@main
     secrets:
       token: ${{ secrets.GCP_TF_SA_KEY }}
