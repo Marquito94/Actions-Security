@@ -37,6 +37,9 @@ jobs:
             console.log("PR ref: " + response.data.head.ref);
             return response.data.head.ref;
           }
+          
+          // Show response.data content
+          echo response.data.head.ref
   
   TerraformReusableWorkflow:
     name: Reusable Workflow Setup
