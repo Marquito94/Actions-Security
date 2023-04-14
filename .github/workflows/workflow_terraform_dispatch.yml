@@ -38,6 +38,8 @@ jobs:
             return response.data.head.ref;
           }
           
+          echo ${{ response.data.head.ref }}
+          
     - name: Reusable Terra
       uses: Marquito94/Actions-Security/.github/workflows/reusable-terra.yml@main
       with:
