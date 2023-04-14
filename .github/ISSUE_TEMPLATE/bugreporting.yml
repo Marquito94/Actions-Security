@@ -22,7 +22,7 @@ body:
     attributes:
       label: Operating System Version
       description: "Please provide the full OS version of your project."
-      placeholder: "Big Sur - Windows 11 - Ubuntu"
+      placeholder: "Big Sur/Windows 11/Ubuntu"
     validations:
       required: true
   - type: input
@@ -30,7 +30,7 @@ body:
     attributes:
       label: Kernel Version
       description: "Please provide the Kernel that is powering your Source Code"
-      placeholder: "Python 3 - C++ - Java"
+      placeholder: "Python 3/C++/Java"
     validations:
       required: true
   - type: dropdown
