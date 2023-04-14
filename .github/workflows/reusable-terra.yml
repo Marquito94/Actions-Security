@@ -7,7 +7,7 @@ on:
         required: true
 
 jobs:
-  run terraform:
+  RunTerraform:
     name: 'Terraform ci/cd'
     runs-on: ubuntu-latest
     
