@@ -18,7 +18,7 @@ jobs:
     
     steps:
     - name: Verify deploy with PR number manually
-      uses: actions/github-script@v5
+      uses: actions/github-script@v6
       id: verify_pr_number
       with:
         github-token: ${{ secrets.GIT_TOKEN }}
