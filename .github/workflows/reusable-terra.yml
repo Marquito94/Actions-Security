@@ -8,7 +8,7 @@ on:
 
 jobs:
   RunTerraform:
-    name: 'Terraform ci/cd'
+    name: 'Run Reusable Workflow'
     runs-on: ubuntu-latest
     
     steps:
