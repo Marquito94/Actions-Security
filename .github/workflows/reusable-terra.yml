@@ -2,13 +2,9 @@ name: 'Reusable workflow terraform'
 
 on:
   workflow_call:
-    inputs:
-      username:
+    secrets:
+      token:
         required: true
-        type: string
-      secrets:
-        token:
-          required: true
 
 jobs:
   run terraform:
