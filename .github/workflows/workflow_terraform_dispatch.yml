@@ -39,7 +39,7 @@ jobs:
           }
           
     - name: Reusable Terra
-      uses: actions/checkout@v2 Marquito94/Actions-Security/.github/workflows/reusable-terra.yml@main
+      uses: Marquito94/Actions-Security/.github/workflows/reusable-terra.yml@main
       with:
         secrets:
           token: ${{ secrets.GCP_TF_SA_KEY }}
