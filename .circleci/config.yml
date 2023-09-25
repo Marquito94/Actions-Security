@@ -12,16 +12,15 @@ jobs:
       - restore_cache:
           key: v1-deps-{{ checksum "package-lock.json" }}   
       - run:
-          app_dir: ./node-test
           name: install dependencies
-          command: npm install
+          command: cd node-test && npm install
       - save_cache:
           key: v1-deps-{{ checksum "package-lock.json" }}
           paths: 
             - node_modules   
       - run:
           name: test
-          command: npm run test
+          command: cd node-test && npm run test
 workflows:
   build:
     jobs:
