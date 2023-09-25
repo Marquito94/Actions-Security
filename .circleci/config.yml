@@ -20,7 +20,7 @@ workflows:
   build_test_workflow: # this can be any name you choose
     jobs:
       - build_and_test
-        filters:
-          branches:
-            only: main # only deploy when on main
+      filters:
+        branches:
+          only: main # only deploy when on main
 
