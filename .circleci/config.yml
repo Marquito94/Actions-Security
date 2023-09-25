@@ -5,16 +5,17 @@ orbs:
 
 jobs:
   build_and_test:
-    working_directory: ~/project/node-test
     executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
       - run:
+          app-dir: ./node-test
           command: npm run test
           name: Run tests
       - run:
+          app-dir: ./node-test
           command: npm run build
           name: Build app
       - persist_to_workspace:
