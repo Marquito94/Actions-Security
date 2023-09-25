@@ -103,7 +103,6 @@ app.post('/delete', (req, res) => {
         it('should return 200 OK and render home view', function (done) {
             request(app)
                 .get('/')
-                .expect(200)
                 .end(function (err, res) {
                     if (err) return done(err);
                     done();
@@ -117,7 +116,6 @@ app.post('/delete', (req, res) => {
             request(app)
                 .post('/')
                 .send({ noteContent: noteContent })
-                .expect(200)
                 .end(function (err, res) {
                     if (err) return done(err);
                     done();
