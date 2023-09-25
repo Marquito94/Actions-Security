@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          app-dir: ./node-test
           pkg-manager: npm
       - run:
           app-dir: ./node-test
