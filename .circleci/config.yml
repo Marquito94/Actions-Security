@@ -21,10 +21,9 @@ jobs:
       - npm install
       - npm run build
 workflows:
-  version: 2.1
-    test_build:
-      jobs:
-        - test
-        - build:
-         requires:
-           - test
+  test_build:
+    jobs:
+      - test
+      - build:
+        requires:
+          - test
