@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   build_and_test: # this can be any name you choose
-    path: ./node-test
+    working-directory: /home/circleci/project/node-test
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
