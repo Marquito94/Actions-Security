@@ -8,19 +8,19 @@ version: 2.1
         - run: echo "Running tests"
         - run: npm install
         - run: npm test
-      build:
-        docker:
-          - image: circleci/node:12.16
-        steps:
-          - checkout
-          - run: echo "build project"
-          - npm install
-          - npm run build
-workflows:
-  version: 2.1
-    test_build:
-      jobs:
-        - test
-        - build:
-          requires:
-            - test
+    build:
+      docker:
+        - image: circleci/node:12.16
+      steps:
+        - checkout
+        - run: echo "build project"
+        - npm install
+        - npm run build
+  workflows:
+    version: 2.1
+      test_build:
+        jobs:
+          - test
+          - build:
+            requires:
+              - test
