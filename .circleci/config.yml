@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build_and_test:
+    working_directort: ~/Actions-Security/node-test
     executor: node/default
     steps:
       - checkout
