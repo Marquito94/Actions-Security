@@ -5,6 +5,7 @@ orbs:
   
 jobs:
   test:
+    executor: node-default
     docker:
       - image: circleci/node:12.16
     steps:
@@ -15,6 +16,7 @@ jobs:
       - run: npm install
       - run: npm test
   build:
+    executor: node-default
     docker:
       - image: circleci/node:12.16
     steps:
