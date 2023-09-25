@@ -1,29 +1,26 @@
 version: 2.1
-
-orbs:
-  node: circleci/node@5.0.2
-
-jobs:
-  build_and_test: # this can be any name you choose
-    executor: node/default # use the default executor defined within the orb
-    steps:
-      - checkout
-      - node/install-packages:
-          app-dir: ./node-test
-          pkg-manager: npm
-      - run:
-          app-dir: ./node-test
-          command: npm install
-          name: Start configuration
-      - run:
-          app-dir: ./node-test
-          command: npm run test
-          name: Run tests
-      - run:
-          app-dir: ./node-test
-          command: npm run build
-          name: Build app
+  jobs:
+    test:
+      docker:
+        - image: circleci/node:12.16
+      steps:
+        - checkout
+        - run: echo "Running tests"
+        - run: npm install
+        - run: npm test
+      build:
+        docker:
+          - image: circleci/node:12.16
+        steps:
+          - checkout
+          - run: echo "build project"
+          - npm install
+          - npm run build
 workflows:
-  build_test_workflow: # this can be any name you choose
-    jobs:
-      - build_and_test
+  version: 2.1
+    test_build:
+      jobs:
+        - test
+        - build:
+          requires:
+            - test
