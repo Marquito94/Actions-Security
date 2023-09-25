@@ -3,8 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const expect = chai.expect;
-
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
