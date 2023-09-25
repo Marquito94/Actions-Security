@@ -23,4 +23,5 @@ jobs:
           command: npm run test
 workflows:
   build:
-    - build_and_test
+    jobs:
+      - build_and_test
