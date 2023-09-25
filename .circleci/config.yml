@@ -5,38 +5,19 @@ orbs:
 
 jobs:
   build_and_test:
-    executor: node/default
+    docker:
+      - image: cimg/node:16.11.1
     steps:
       - checkout
-      - node/install-packages:
-          app-dir: ./node-test
-          pkg-manager: npm
       - restore_cache:
-          name: Restore saved cache
-          key: v1-{{ checksum "package-lock.json" }}
+          key: v1-deps-{{ checksum "package-lock.json" }}   
       - run:
-          app-dir: ./node-test
-          command: npm ci
-          name: Run install
-      - run:
-          app-dir: ./node-test
-          command: npm run test
-          name: Run tests
-      - run:
-          app-dir: ./node-test
-          command: npm run build
-          name: Build app
+          name: install dependencies
+          command: npm install
       - save_cache:
-          name: Save npm package cache
-          key: v1-{{ checksum "package-lock.json" }}
-          paths:
-            - ~/.cache/node
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - ./node-test
-            
-workflows:
-  test_my_app:
-    jobs:
-      - build_and_test
+          key: v1-deps-{{ checksum "package-lock.json" }}
+          paths: 
+            - node_modules   
+      - run:
+          name: test
+          command: npm run test
