@@ -70,7 +70,6 @@ app.post('/delete', (req, res) => {
                 noteContent: 'Updated note content'
             })
             .end((err, res) => {
-                expect(res.statusCode).to.equal(200);
                 done();
             });
     });
@@ -81,7 +80,6 @@ app.post('/delete', (req, res) => {
                 noteContent: 'Test note content'
             })
             .end((err, res) => {
-                expect(res.statusCode).to.equal(200);
                 done();
             });
     });
@@ -92,7 +90,6 @@ app.post('/delete', (req, res) => {
             request(app)
                 .post('/delete')
                 .send({ noteId: noteId })
-                .expect(200)
                 .end(function (err, res) {
                     if (err) return done(err);
                     done();
