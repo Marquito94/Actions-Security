@@ -5,18 +5,16 @@ orbs:
 
 jobs:
   build_and_test: # this can be any name you choose
-    working_directory: ~/project
+    working_directory: ~/Actions-Security
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
       - run:
-          app-dir: node-test/
           command: npm run test
           name: Run tests
       - run:
-          app-dir: node-test/
           command: npm run build
           name: Build app
 workflows:
