@@ -1,8 +1,6 @@
 var assert = require('assert'),
 http = require('http');
 
-var server = require('../app.js');
-
 describe('/', function () {
   it('should return 200', function (done) {
     http.get('http://localhost:8080', function (res) {
