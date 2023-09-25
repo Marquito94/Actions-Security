@@ -1,40 +1,23 @@
 {
-  "name": "nimble-ice",
-  "version": "0.0.1",
-  "private": true,
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "lint": "npx standard --fix",
-    "test": "jest --detectOpenHandles"
+    "start": "node app.js",
+    "test": "mocha"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "^1.9.2",
-    "morgan": "~1.9.1"
-  },
-  "engines": {
-    "node": ">=16"
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
-    "standard": "^16.0.3",
-    "supertest": "^6.1.3"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ]
-  },
-  "standard": {
-    "env": [
-      "mocha",
-      "commonjs",
-      "node",
-      "jest"
-    ]
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
   }
 }
