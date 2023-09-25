@@ -16,6 +16,10 @@ jobs:
           key: v1-{{ checksum "package-lock.json" }}
       - run:
           app-dir: ./node-test
+          command: npm ci
+          name: Run install
+      - run:
+          app-dir: ./node-test
           command: npm run test
           name: Run tests
       - run:
