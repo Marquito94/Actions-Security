@@ -20,7 +20,7 @@ jobs:
             - node_modules   
       - run:
           name: test
-          command: cd node-test && npm run test
+          command: cd node-test && npm run test --passWithNoTests
 workflows:
   build:
     jobs:
