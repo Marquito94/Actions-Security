@@ -5,19 +5,21 @@ orbs:
   
 jobs:
   test:
-    executor: node/default
     docker:
       - image: circleci/node:12.16
     steps:
+      - node/install-packages:
+          pkg-manager: npm
       - checkout
       - run: echo "Running tests"
       - run: npm install
       - run: npm test
   build:
-    executor: node/default
     docker:
       - image: circleci/node:12.16
     steps:
+      - node/install-packages:
+          pkg-manager: npm
       - checkout
       - run: echo "build project"
       - npm install
