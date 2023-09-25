@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build_and_test:
+    working_directory: ~/project/node-test
     docker:
       - image: cimg/node:16.11.1
     steps:
@@ -12,7 +13,6 @@ jobs:
       - restore_cache:
           key: v1-deps-{{ checksum "package-lock.json" }}   
       - run:
-          app_dir: ./node-test
           name: install dependencies
           command: npm install
       - save_cache:
@@ -20,7 +20,6 @@ jobs:
           paths: 
             - node_modules   
       - run:
-          app_dir: ./node-test
           name: test
           command: npm run test
 workflows:
